@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<section class="container">
+  <div class="text-center">
+    <form method="post">
+      {% csrf_token %}
+      <p>Are you sure you want to delete "{{ object.title }}"?</p>
+      <input class="btn btn-danger" type="submit" value="Confirm" />
+      <div class="d-inline">
+        <a class="btn btn-primary" href="{% url 'index' %}">Back</a>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock content %}

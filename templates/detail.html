@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row justify-content-center mt-3">
+    <div class="col-md-5 col-sm-12 border-bottom">
+        <h3 class="text-center">
+            {{todo.title}}
+        </h3>
+        <p class="text-right">
+            {{todo.desc}}
+        </p>
+        <span class="text-muted">&nbsp;<i class="fas fa-calendar-alt"></i>{{todo.created_at|date:"SHORT_DATE_FORMAT"}}</span><span class="text-muted"> <i class="fas fa-clock"></i>&nbsp;{{todo.created_at|time:"h:i "}}</span>
+        <div class="d-flex flex-row mt-3 mb-3">
+            <a class="btn btn-primary btn-sm me-3" href="{% url 'edit' todo.pk %}">Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a class="btn btn-danger btn-sm me-3" href="{% url 'delete' todo.pk %}">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
