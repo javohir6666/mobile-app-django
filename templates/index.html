@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
         <main>
+          {% if message %}
+          <div class="alert alert-danger text-center">
+            <strong>{{request.user.first_name}}! </strong>{{message}}
+          </div>
+          {% endif %}
           <h2 class="display-6 text-center mb-4">plans</h2>
           <div class="table-responsive">
               <table class="table text-center">

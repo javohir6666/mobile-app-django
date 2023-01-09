@@ -1,0 +1,74 @@
+{% extends 'admin_templates/base.html' %}
+{% load static %}
+{% block content %}
+<section class="main_content dashboard_part">
+    <div class="main_content_iner ">
+        <div class="container-fluid plr_30 body_white_bg pt_30">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="white_box mb_30">
+                        <div class="box_header ">
+                            <div class="main-title">
+                                <h3 class="mb-0"> Create User</h3>
+                            </div>
+                        </div>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label class="form-label" for="firstnameInput">First name</label>
+                                <input type="text" class="form-control" required name="first_name" id="firstnameInput"
+                                    placeholder="Enter something...">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="lastnameInput">Last name</label>
+                                <input type="text" class="form-control" required name="last_name" id="lastnameInput"
+                                    placeholder="Enter something...">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="username">Username</label>
+                                <input type="text" class="form-control" required name="username" id="username"
+                                    placeholder="Enter something...">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="emailInput">Email</label>
+                                <input type="email" class="form-control" required name="email" id="emailInput"
+                                    placeholder="Enter something...">
+                            </div>
+                            <div class="form-group mb-3 col">
+                                <label class="form-label" for="passInput">Password</label>
+                                <input type="password" class="form-control" required name="password" id="passInput"
+                                    placeholder="Enter something...">
+                            </div>
+                            <div class="form-group mb-3 col">
+                                <label class="form-label" for="passInput2">Retry password</label>
+                                <input type="password" class="form-control" required name="password2" id="passInput2"
+                                    placeholder="Enter something...">
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="is_staff" id="is_staffInput"
+                                    >
+                                <label class="form-check-label" for="is_staffInput">Is staff</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="is_active" id="is_activeInput"
+ checked>
+                                <label class="form-check-label" for="is_activeInput">Is active</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="is_superuser" id="is_superuserInput"
+                                    >
+                                <label class="form-check-label" for="is_superuserInput">Is superuser</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Create user</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

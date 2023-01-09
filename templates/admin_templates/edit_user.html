@@ -1,0 +1,147 @@
+{% extends 'admin_templates/base.html' %}
+{% load static %}
+{% block content %}
+<div class="main_content_iner ">
+    <div class="container-fluid plr_30 body_white_bg pt_30">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="white_box mb_30">
+                    <div class="box_header ">
+                        <div class="main-title">
+                            <h3 class="mb-0">Input select 1</h3>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label" for="exampleFormControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="exampleFormControlSelect2">Example multiple select</label>
+                            <select multiple="" class="form-control" id="exampleFormControlSelect2">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="white_box mb_30">
+                    <div class="box_header ">
+                        <div class="main-title">
+                            <h3 class="mb-0">Input select 2</h3>
+                        </div>
+                    </div>
+                    <select class="nice_Select mb_30" style="display: none;">
+                        <option data-display="Select">Nothing</option>
+                        <option value="1">Some option</option>
+                        <option value="2">Another option</option>
+                        <option value="3" disabled="">A disabled option</option>
+                        <option value="4">Potato</option>
+                    </select>
+                    <div class="nice-select nice_Select mb_30" tabindex="0"><span class="current">Select</span>
+                        <div class="nice-select-search-box"><input type="text" class="nice-select-search"
+                                placeholder="Search..."></div>
+                        <ul class="list">
+                            <li data-value="Nothing" data-display="Select" class="option selected">Nothing</li>
+                            <li data-value="1" class="option">Some option</li>
+                            <li data-value="2" class="option">Another option</li>
+                            <li data-value="3" class="option disabled">A disabled option</li>
+                            <li data-value="4" class="option">Potato</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="white_box mb_30">
+                    <div class="box_header ">
+                        <div class="main-title">
+                            <h3 class="mb-0">Input select 3</h3>
+                        </div>
+                    </div>
+                    <select class="default_sel mb_30 w-100" style="display: none;">
+                        <option data-display="Select">Nothing</option>
+                        <option value="1">Some option</option>
+                        <option value="2">Another option</option>
+                        <option value="3" disabled="">A disabled option</option>
+                        <option value="4">Potato</option>
+                    </select>
+                    <div class="nice-select default_sel mb_30 w-100" tabindex="0"><span class="current">Select</span>
+                        <div class="nice-select-search-box"><input type="text" class="nice-select-search"
+                                placeholder="Search..."></div>
+                        <ul class="list">
+                            <li data-value="Nothing" data-display="Select" class="option selected">Nothing</li>
+                            <li data-value="1" class="option">Some option</li>
+                            <li data-value="2" class="option">Another option</li>
+                            <li data-value="3" class="option disabled">A disabled option</li>
+                            <li data-value="4" class="option">Potato</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="white_box mb_30">
+                    <div class="box_header ">
+                        <div class="main-title">
+                            <h3 class="mb-0">Input select 4</h3>
+                        </div>
+                    </div>
+                    <select class="default_sel mb_30" style="display: none;">
+                        <option data-display="Select">Nothing</option>
+                        <option value="1">Some option</option>
+                        <option value="2">Another option</option>
+                        <option value="3" disabled="">A disabled option</option>
+                        <option value="4">Potato</option>
+                    </select>
+                    <div class="nice-select default_sel mb_30" tabindex="0"><span class="current">Select</span>
+                        <div class="nice-select-search-box"><input type="text" class="nice-select-search"
+                                placeholder="Search..."></div>
+                        <ul class="list">
+                            <li data-value="Nothing" data-display="Select" class="option selected">Nothing</li>
+                            <li data-value="1" class="option">Some option</li>
+                            <li data-value="2" class="option">Another option</li>
+                            <li data-value="3" class="option disabled">A disabled option</li>
+                            <li data-value="4" class="option">Potato</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="white_box mb_30">
+                    <div class="box_header ">
+                        <div class="main-title">
+                            <h3 class="mb-0">Input select 5</h3>
+                        </div>
+                    </div>
+                    <select class="form-select form-control-lg mb_30">
+                        <option>Large select</option>
+                    </select>
+                    <select class="form-select mb_30">
+                        <option>Default select</option>
+                    </select>
+                    <select class="form-select form-control-sm">
+                        <option>Small select</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock content %}

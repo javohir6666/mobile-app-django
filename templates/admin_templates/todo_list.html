@@ -1,0 +1,97 @@
+{% extends 'admin_templates/base.html' %}
+{% load static %}
+{% block content %}
+<section class="main_content dashboard_part">
+<div class="main_content_iner ">
+    <div class="container-fluid plr_30 body_white_bg pt_30">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="QA_section">
+                    <div class="white_box_tittle list_header">
+                        <h4>Table</h4>
+                        <div class="box_right d-flex lms_block">
+                            <div class="serach_field_2">
+                                <div class="search_inner">
+                                    <form method="GET" action="{% url 'todo_search' %}" >
+                                        <div class="search_field">
+                                            <input type="text" name="query" placeholder="Search content here...">
+                                        </div>
+                                        <button type="submit"> <i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="add_button ms-2">
+                                <a href="{% url 'todo_create' %}" class="btn_1">Add
+                                    New</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="QA_table ">
+
+                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                            <table class="table lms_table_active dataTable no-footer dtr-inline" id="DataTables_Table_0"
+                                role="grid" aria-describedby="DataTables_Table_0_info" style="width: 1478px;">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting">Name</th>
+                                        <th class="sorting">Description</th>
+                                        <th class="sorting">Created Date</th>
+                                        <th class="sorting">Done</th>
+                                        <th class="sorting">Actions</th>
+                                    </tr>
+                                </thead>
+                                {% if todo_list %}
+                                <tbody>
+                                    {% for todo in todo_list %}
+                                    <tr role="row" class="odd">
+                                        <td>{{todo.title}}</td>
+                                        <td>{{todo.desc}}</td>
+                                        <td>{{todo.created_at|date:"SHORT_DATETIME_FORMAT"}}</td>
+                                        <td>
+                                            {% if todo.isDone == True %}
+                                            <a href="#" class="status_btn">Done</a>
+                                            {% else %}
+                                            <a href="#" class="status_btn" style="background-color:red;">Not Done</a>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'todo_edit' todo.pk %}" class="m-1" style="font-size:20px"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                                            <a href="#" class="m-1" style="font-size:20px"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a href="{% url 'todo_delete' todo.pk %}" class="m-1" style="font-size:20px"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}  
+                                </tbody>
+                                {% endif %}  
+                                {% if todos %}
+                                <tbody>
+                                    {% for todo in todos %}
+                                    <tr role="row" class="odd">
+                                        <td>{{todo.title}}</td>
+                                        <td>{{todo.desc}}</td>
+                                        <td>{{todo.created_at|date:"SHORT_DATETIME_FORMAT"}}</td>
+                                        <td>
+                                            {% if todo.isDone == True %}
+                                            <a href="#" class="status_btn">Done</a>
+                                            {% else %}
+                                            <a href="#" class="status_btn" style="background-color:red;">Not Done</a>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'todo_edit' todo.pk %}" class="m-1" style="font-size:20px"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                                            <a href="#" class="m-1" style="font-size:20px"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a href="{% url 'todo_delete' todo.pk %}" class="m-1" style="font-size:20px"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}  
+                                </tbody>
+                                {% endif %}                                  
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock content %}

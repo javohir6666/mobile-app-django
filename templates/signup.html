@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="login-section">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <!-- Surname input -->
+            <div class="col">
+                <div class="form-outline mb-4">
+                    <input type="text" id="InputFirstname" class="form-control form-control"
+                        placeholder="Enter your First name " name="first_name"/>
+                    <label class="form-label" for="InputFirstname">Username</label>
+                </div> 
+            </div> 
+
+            <div class="col">
+                <div class="form-outline mb-4">
+                    <input type="text" id="InputLastname" class="form-control form-control"
+                        placeholder="Enter your Last name " name="last_name"/>
+                    <label class="form-label" for="InputLastname">Username</label>
+                </div> 
+            </div> 
+
+            <!-- Surname input -->
+            <div class="form-outline mb-4">
+                <input type="text" id="InputUsername" class="form-control form-control"
+                    placeholder="Enter your Last name " name="username"/>
+                <label class="form-label" for="InputUsername">Username</label>
+                </div>
+                
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <input type="email" id="Inputemail" class="form-control form-control"
+                    placeholder="Enter a valid email address" name="email"/>
+                <label class="form-label" for="Inputemail">Email address</label>
+                </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input type="password" id="InputPass" class="form-control form-control"
+                placeholder="Enter password"name="password" />
+              <label class="form-label" for="InputPass">Password</label>
+            </div>
+
+            <!-- Password2 input -->
+            <div class="form-outline mb-3">
+                <input type="password" id="InputPass2" class="form-control form-control"
+                    placeholder="Reply password"name="password2" />
+                <label class="form-label" for="InputPass2">Reply Password</label>
+                </div>
+            </div>
+  
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" value="" id="rememberMe" />
+                <label class="form-check-label" for="rememberMe">
+                  Remember me
+                </label>
+              </div>
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>                      
+  </section>
+  {% endblock content %}

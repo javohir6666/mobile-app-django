@@ -1,0 +1,35 @@
+{% extends 'admin_templates/base.html' %}
+{% load static %}
+{% block content %}
+<section class="main_content dashboard_part">
+<div class="main_content_iner ">
+    <div class="container-fluid plr_30 body_white_bg pt_30">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="white_box mb_30">
+                    <div class="box_header ">
+                        <div class="main-title">
+                            <h3 class="mb-0"> Create Todo</h3>
+                        </div>
+                    </div>
+                    <form method="POST">
+                        {% csrf_token %} 
+                        <div class="mb-3">
+                            <label class="form-label" for="titleInput">Title</label>
+                            <input type="text" class="form-control" required name="title" id="titleInput"
+                                placeholder="Enter something...">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="descInput">Description</label>
+                            <input type="textarea" class="form-control" required name="desc" id="descInput"
+                                placeholder="Enter something...">
+                        </div>
+                        <button type="submit" class="btn btn-success">Create todo</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock content %}
